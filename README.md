@@ -1,4 +1,5 @@
 # Jogadores de E-Sports 
+### Diagrama de Classe 
 
 ### MySQL Codes
 
