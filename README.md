@@ -1,6 +1,9 @@
 # Jogadores de E-Sports 
 ### Diagrama de Classe 
 
+<img src="Jogadores de e-sports (1).png" alt="img" width="1000" height="600">
+
+
 ### MySQL Codes
 
 - inicializar o BDR mariaDB (antigo MySQL)
