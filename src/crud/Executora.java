@@ -42,6 +42,7 @@ public class Executora {
                 }
 
                 break;
+
             case 2:
                 System.out.print("Visualizar Jogadores Veteranos [1] \n");
                 System.out.print("Visualizar Jogadores Trainees  [2] \n");
@@ -58,6 +59,7 @@ public class Executora {
                         break;
                 }
                 break;
+
             case 3:
                 System.out.print("Atualizar Jogadores Veteranos [1] \n");
                 System.out.print("Atualizar Jogadores Trainees  [2] \n");
@@ -106,6 +108,7 @@ public class Executora {
                         break;
                 }
                 break;
+
             case 4:
                 System.out.print("Deletar Jogadores Veteranos [1] \n");
                 System.out.print("Deletar Jogadores Trainees  [2] \n");
