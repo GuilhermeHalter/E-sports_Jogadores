@@ -1,6 +1,6 @@
 package crud;
 
-public class JogadoresVeteranos extends Jogadores{
+public class JogadoresVeteranos extends Jogadores implements Aumentar{
 
     public JogadoresVeteranos(int id, String nome, int anoTreino, float salario){
         super(id, nome, anoTreino, salario);
@@ -8,8 +8,9 @@ public class JogadoresVeteranos extends Jogadores{
 
     // Metodos
 
-    public float aumentarSalario(){
-        this.setSalario(getSalario() + (this.getSalario() * 0.10f)); // Adiciona 10% ao salário atual
-        return getSalario(); // Retorna o novo salário atualizado
+    @Override
+    public float aumentarSalario() {
+        this.setSalario(getSalario() + (this.getSalario() * 0.10f));
+        return getSalario();
     }
 }

@@ -1,7 +1,7 @@
 package crud;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
 
 public class Executora {
 
@@ -10,7 +10,6 @@ public class Executora {
         jogCRUD.connectionDB();
 
         Scanner scanner = new Scanner(System.in);
-
 
         System.out.print("Escolha uma opcao: \n");
         System.out.print("Adicionar Jogador  [1] \n");
@@ -32,7 +31,7 @@ public class Executora {
                 float salario = scanner.nextFloat();
 
                 if (anoTreino > 5) {
-                    //veterano
+                    // veterano
                     JogadoresVeteranos jogador = new JogadoresVeteranos(id, nome, anoTreino, salario);
                     jogador.aumentarSalario();
                     jogCRUD.createJogadoresVeteranos(jogador);
@@ -40,7 +39,6 @@ public class Executora {
                     JogadoresTrainees jogador = new JogadoresTrainees(id, nome, anoTreino, salario);
                     jogCRUD.createJogadoresTrainees(jogador);
                 }
-
                 break;
 
             case 2:
@@ -113,24 +111,25 @@ public class Executora {
                 System.out.print("Deletar Jogadores Veteranos [1] \n");
                 System.out.print("Deletar Jogadores Trainees  [2] \n");
                 int opcaoDeletar = scanner.nextInt();
-                switch (opcaoDeletar) {
-                    case 1:
-                        System.out.print("Digite o id do Jogador que queira Deletar: ");
-                        int idDeletar = scanner.nextInt();
-                        scanner.nextLine();
-
-                        jogCRUD.deleteJogadoresVeteranos(idDeletar);
-                        break;
-                    case 2:
-                        System.out.print("Digite o id do Jogador que queira Deletar: ");
-                        int idDeletarTrainees = scanner.nextInt();
-                        scanner.nextLine();
-
-                        jogCRUD.deleteJogadoresTrainees(idDeletarTrainees);
-                        break;
-                    default:
-                        System.out.println("Número inválido!");
-                        break;
+                try {
+                    switch (opcaoDeletar) {
+                        case 1:
+                            System.out.print("Digite o id do Jogador que deseja deletar: ");
+                            int idDeletar = scanner.nextInt();
+                            jogCRUD.deleteJogadoresVeteranos(idDeletar);
+                            break;
+                        case 2:
+                            System.out.print("Digite o id do Jogador que deseja deletar: ");
+                            int idDeletarTrainees = scanner.nextInt();
+                            jogCRUD.deleteJogadoresTrainees(idDeletarTrainees);
+                            break;
+                        default:
+                            System.out.println("Número inválido!");
+                            break;
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Erro: Entrada inválida.");
+                    scanner.nextLine();  // Limpar o scanner
                 }
                 break;
 
