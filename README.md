@@ -49,7 +49,7 @@ primary key(id));
 
 -  Verificar a estrutura da tabela criada
 ```bash
-desc jogadoresTrainees;
+desc jogadoresVeteranos;
 ```
 ```bash
 desc jogadoresTrainees;
